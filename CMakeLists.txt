@@ -4,4 +4,13 @@ project(NetSim CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(NetSim src/main.cpp)
+enable_testing()
+
+include_directories(include)
+
+add_subdirectory(tests)
+
+add_executable(NetSim
+        src/main.cpp
+        src/Package.cpp
+        )
