@@ -13,4 +13,5 @@ add_subdirectory(tests)
 add_executable(NetSim
         src/main.cpp
         src/Package.cpp
-        )
+        src/storage_types.cpp
+)
