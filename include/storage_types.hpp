@@ -41,9 +41,6 @@ public:
 
 class PackageQueue:public IPackageQueue
 {
-private:
-    PackageQueueType queue_type_;
-    std::list<Package> container_;
 public:
     explicit PackageQueue(PackageQueueType queue_type):queue_type_(queue_type){}
 
@@ -58,6 +55,10 @@ public:
     const_iterator end() const override {return container_.end();}
     const_iterator cbegin() const override {return container_.cbegin();}
     const_iterator cend() const override {return container_.cend();}
+
+private:
+    PackageQueueType queue_type_;
+    std::list<Package> container_;
 
 };
 
