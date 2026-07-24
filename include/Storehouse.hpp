@@ -9,12 +9,14 @@
 
 #include "receiver_types.hpp"
 #include "storage_types.hpp"
+#include "types.hpp"
 
 class Storehouse : public IPackageReceiver
 {
 
 public:
-    Storehouse(ElementID id, std::unique_ptr<IPackageReceiver> d = std::make_unique<PackageQueue>())
+    explicit Storehouse(ElementID id,
+                        std::unique_ptr<IPackageStockpile> d = std::make_unique<PackageQueue>(PackageQueueType::FIFO))
         : id_(id), d_(std::move(d)) {}
 
     void receive_package(Package&& p) override {d_->push(std::move(p));}
