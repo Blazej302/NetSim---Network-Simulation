@@ -55,8 +55,6 @@ private:
 
 class PackageSender
 {
-private:
-    std::optional<Package> sending_buffer_ = std::nullopt;
 public:
     ReceiverPreferences receiver_preferences_;
 
@@ -68,7 +66,7 @@ public:
     PackageSender(const PackageSender&) = delete;
     PackageSender& operator = (const PackageSender&) = delete;
 
-    virtual ~PackageSender();
+    virtual ~PackageSender() = default;
 
     void push_package(Package&& p);
     void send_package();
@@ -76,6 +74,8 @@ public:
     const std::optional<Package>& get_sending_buffer() const {return sending_buffer_;}
 protected:
     void reset_buffer() {sending_buffer_.reset();}
+private:
+    std::optional<Package> sending_buffer_ = std::nullopt;
 };
 
 #endif //NETSIM_RECEIVER_TYPES_HPP

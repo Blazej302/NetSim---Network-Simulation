@@ -11,11 +11,6 @@
 
 class Package
 {
-private:
-    ElementID id_;
-    inline static std::set<ElementID> assigned_IDs{};
-    inline static std::set<ElementID> freed_IDs{};
-
 public:
     Package();
     explicit Package(ElementID id);
@@ -30,6 +25,10 @@ public:
 
     ElementID get_id() const {return id_;}
 
+private:
+    ElementID id_;
+    inline static std::set<ElementID> assigned_IDs{};
+    inline static std::set<ElementID> freed_IDs{};
 };
 
 #endif //NETSIM_PACKAGE_HPP
