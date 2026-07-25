@@ -21,6 +21,7 @@ public:
 
     void receive_package(Package&& p) override {d_->push(std::move(p));}
     ElementID get_id() const override {return id_;}
+    ReceiverType get_receiver_type() const override { return ReceiverType::STOREHOUSE; }
 
     IPackageStockpile::const_iterator begin() const override { return d_->begin(); }
     IPackageStockpile::const_iterator end() const override { return d_->end(); }

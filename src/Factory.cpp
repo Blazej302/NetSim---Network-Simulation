@@ -90,7 +90,7 @@ bool Factory::is_consistent() const {
 
 void Factory::do_deliveries(Time t) {
     for (auto& ramp : ramps_) {
-        ramp.deliver_goods(t);
+        ramp.delivery_goods(t);
     }
 }
 

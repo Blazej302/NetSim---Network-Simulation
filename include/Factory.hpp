@@ -5,6 +5,10 @@
 #ifndef NETSIM_FACTORY_HPP
 #define NETSIM_FACTORY_HPP
 
+#include "Worker.hpp"
+#include "Ramp.hpp"
+#include "Storehouse.hpp"
+
 #include <list>
 #include <algorithm>
 #include <stdexcept>
@@ -27,7 +31,7 @@ public:
         return std::find_if(collection_.begin(), collection_.end(), [id](const auto& elem) {return elem.get_id() == id;});
     }
 
-    const_iterator find_by_id(ElementID id)
+    const_iterator find_by_id(ElementID id) const
     {
         return std::find_if(collection_.cbegin(), collection_.cend(), [id](const auto& elem) {return elem.get_id() == id;});
     }

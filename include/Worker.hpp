@@ -22,6 +22,7 @@ public:
 
     void receive_package(Package&& p) override {q_->push(std::move(p));}
     ElementID get_id() const override { return id_; }
+    ReceiverType get_receiver_type() const override { return ReceiverType::WORKER; }
 
     IPackageStockpile::const_iterator begin() const override { return q_->begin(); }
     IPackageStockpile::const_iterator end() const override { return q_->end(); }

@@ -12,9 +12,9 @@ add_subdirectory(tests)
 
 add_executable(NetSim
         src/main.cpp
-        src/Package.cpp
-        src/storage_types.cpp
+        src/Factory.cpp
         src/helpers.cpp
+        src/Package.cpp
         src/Ramp.cpp
         src/receiver_types.cpp
         src/storage_types.cpp
