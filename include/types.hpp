@@ -19,7 +19,7 @@ enum class PackageQueueType
     LIFO
 };
 
-enum class ReceiverTye
+enum class ReceiverType
 {
     WORKER,
     STOREHOUSE

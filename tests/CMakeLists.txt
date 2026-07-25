@@ -10,13 +10,14 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(unit_tests
         tests_PackageAndStorage.cpp
-        tests_nodes.cpp
+        tests_Nodes.cpp
+        test_Factory.cpp
 )
 
 target_sources(unit_tests PRIVATE
-        ../src/Package.cpp
-        ../src/storage_types.cpp
+        ../src/Factory.cpp
         ../src/helpers.cpp
+        ../src/Package.cpp
         ../src/Ramp.cpp
         ../src/receiver_types.cpp
         ../src/storage_types.cpp
