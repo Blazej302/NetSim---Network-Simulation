@@ -25,4 +25,11 @@ enum class ReceiverTye
     STOREHOUSE
 };
 
+enum class NodeColor
+{
+    UNVISITED,
+    VISITED,
+    VERIFIED
+};
+
 #endif //NETSIM_TYPES_HPP
