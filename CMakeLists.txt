@@ -19,4 +19,5 @@ add_executable(NetSim
         src/receiver_types.cpp
         src/storage_types.cpp
         src/Worker.cpp
+        src/factory_io.cpp
 )

@@ -28,6 +28,7 @@ public:
     IPackageStockpile::const_iterator cbegin() const override { return d_->cbegin(); }
     IPackageStockpile::const_iterator cend() const override { return d_->cend(); }
 
+    const IPackageStockpile& get_stock() const { return *d_; }
 
 private:
     ElementID id_;

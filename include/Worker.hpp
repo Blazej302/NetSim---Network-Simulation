@@ -30,8 +30,17 @@ public:
     IPackageStockpile::const_iterator cend() const override { return q_->cend(); }
 
     TimeOffset get_processing_duration() const { return processing_duration_; }
+
     Time get_package_processing_start_time() const { return processing_start_time_; }
+    TimeOffset get_processing_time() const { return processing_duration_; }
+
     const std::optional<Package>& get_processing_buffer() const { return processing_buffer_; }
+
+    PackageQueueType get_queue_type() const { return q_->get_queue_type(); }
+
+    const IPackageQueue* get_queue() const { return q_.get(); }
+
+    const std::optional<Package>& get_sending_buffer() const { return PackageSender::get_sending_buffer();; }
 
 private:
     ElementID id_;
